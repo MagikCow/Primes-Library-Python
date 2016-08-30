@@ -4,11 +4,16 @@
 # Usage:
 # is_prime(n) where n is the number to determine primeness
 
+import is_whole
+
 def is_prime(n):
-    for i in range(2, n):
-        if n % i == 0:
-            return False
-            break
-        if i == n - 1:
-            return True
-            break
+    if n <= 1 or is_whole(n) == False:
+        return False
+
+    else:
+        for i in range(2, n):
+            if n % i == 0:
+                return False
+
+            if i == n - 1:
+                return True
